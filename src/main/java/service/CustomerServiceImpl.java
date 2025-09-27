@@ -1,30 +1,19 @@
 package service;
 
-import db.DBConnection;
-import db.HibernateConnection;
 import javafx.collections.ObservableList;
 import model.Customer;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import repository.CustomerRepository;
 
 import java.sql.*;
-import java.time.LocalDate;
 
 public class CustomerServiceImpl implements CustomerService {
 
     CustomerRepository customerRepository = new CustomerRepository();
-//    SessionFactory sessionFactory = HibernateConnection.getHibernateConnection().getSessionFactory();
+
 
     @Override
     public void addCustomer(String id, String title, String name, String DOB, double salary, String address, String city, String province, String postalCode) {
         customerRepository.addCustomer(id, title, name, DOB, salary, address, city, province, postalCode);
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        session.persist(new Customer(id, title, name, LocalDate.parse(DOB), salary, address, city, province, postalCode));
-//        transaction.commit();
-//        session.close();
     }
 
     @Override

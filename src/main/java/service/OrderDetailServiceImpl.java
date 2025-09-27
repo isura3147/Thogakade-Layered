@@ -1,13 +1,9 @@
 package service;
 
-import db.DBConnection;
 import javafx.collections.ObservableList;
 import model.OrderDetail;
 import repository.OrderDetailRepository;
 
-import javax.xml.transform.Result;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
