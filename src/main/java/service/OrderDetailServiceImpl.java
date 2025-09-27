@@ -2,19 +2,19 @@ package service;
 
 import javafx.collections.ObservableList;
 import model.OrderDetail;
-import repository.OrderDetailRepository;
+import repository.OrderDetailRepositoryImpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OrderDetailServiceImpl implements OrderDetailService {
 
-    OrderDetailRepository orderDetailRepository = new OrderDetailRepository();
+    OrderDetailRepositoryImpl orderDetailRepositoryImpl = new OrderDetailRepositoryImpl();
 
     @Override
     public ObservableList<OrderDetail> loadDetails(ObservableList<OrderDetail> orderDetailInfos) {
         try {
-            ResultSet resultSet = orderDetailRepository.loadDetails();
+            ResultSet resultSet = orderDetailRepositoryImpl.loadDetails();
             while (resultSet.next()) {
                 OrderDetail orderDetail = new OrderDetail(
                         resultSet.getString("OrderId"),
@@ -33,7 +33,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     @Override
     public String getDescription(String itemCode) {
         try {
-            ResultSet resultSet = orderDetailRepository.getDescription(itemCode);
+            ResultSet resultSet = orderDetailRepositoryImpl.getDescription(itemCode);
             if (resultSet.next()) {
                 return resultSet.getString("Description");
             } else {
@@ -46,6 +46,6 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
     @Override
     public void updateOrderDetail(String orderQty, String discount, String orderId, String itemCode) {
-        orderDetailRepository.updateOrderDetails(orderQty, discount, orderId, itemCode);
+        orderDetailRepositoryImpl.updateOrderDetails(orderQty, discount, orderId, itemCode);
     }
 }

@@ -3,12 +3,13 @@ package service;
 import javafx.collections.ObservableList;
 import model.Item;
 import repository.ItemRepository;
+import repository.ItemRepositoryImpl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ItemServiceImpl implements ItemService {
 
-    ItemRepository itemRepository = new ItemRepository();
+    ItemRepository itemRepository = new ItemRepositoryImpl();
 
     @Override
     public ObservableList<Item> loadDetails(ObservableList<Item> itemInfos) {

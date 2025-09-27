@@ -3,13 +3,13 @@ package service;
 import javafx.collections.ObservableList;
 import model.Customer;
 import repository.CustomerRepository;
+import repository.CustomerRepositoryImpl;
 
 import java.sql.*;
 
 public class CustomerServiceImpl implements CustomerService {
 
-    CustomerRepository customerRepository = new CustomerRepository();
-
+    CustomerRepository customerRepository = new CustomerRepositoryImpl();
 
     @Override
     public void addCustomer(String id, String title, String name, String DOB, double salary, String address, String city, String province, String postalCode) {
