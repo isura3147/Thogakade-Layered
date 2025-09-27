@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Orders;
+import service.OrdersServiceImpl;
 import service.OrdersService;
 
 import java.io.IOException;
@@ -24,7 +25,7 @@ import java.util.ResourceBundle;
 public class OrdersFormController implements Initializable {
 
     ObservableList<Orders> ordersInfos = FXCollections.observableArrayList();
-    OrdersService ordersService = new OrdersController();
+    OrdersService ordersService = new OrdersServiceImpl();
     @FXML
     private TableColumn<?, ?> colCustomerId;
     @FXML
