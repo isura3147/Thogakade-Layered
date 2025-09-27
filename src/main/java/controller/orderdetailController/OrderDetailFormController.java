@@ -14,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.OrderDetail;
+import repository.OrderDetailController;
+import service.OrderDetailService;
 
 import java.io.IOException;
 import java.net.URL;

@@ -1,5 +1,7 @@
 package model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -9,7 +11,9 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @ToString
+@Entity
 public class Customer {
+    @Id
     private String id;
     private String title;
     private String name;

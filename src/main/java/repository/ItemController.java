@@ -1,8 +1,9 @@
-package controller.itemController;
+package repository;
 
 import db.DBConnection;
 import javafx.collections.ObservableList;
 import model.Item;
+import service.ItemService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

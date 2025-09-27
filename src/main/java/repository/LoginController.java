@@ -1,6 +1,7 @@
-package controller.loginController;
+package repository;
 
 import db.DBConnection;
+import service.LoginService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import repository.ItemController;
+import service.ItemService;
 
 import java.io.IOException;
 import java.sql.*;

@@ -1,4 +1,4 @@
-package controller.ordersController;
+package service;
 
 import javafx.collections.ObservableList;
 import model.Orders;

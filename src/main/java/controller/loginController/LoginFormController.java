@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import repository.LoginController;
+import service.LoginService;
 
 import java.io.IOException;
 import java.sql.*;

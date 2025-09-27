@@ -1,8 +1,9 @@
-package controller.orderdetailController;
+package repository;
 
 import db.DBConnection;
 import javafx.collections.ObservableList;
 import model.OrderDetail;
+import service.OrderDetailService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
