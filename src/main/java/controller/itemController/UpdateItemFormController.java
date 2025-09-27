@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import repository.ItemController;
+import service.ItemServiceImpl;
 import service.ItemService;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class UpdateItemFormController {
     public JFXButton btnViewAllItems;
     @FXML
     public TextField txtUnitPrice;
-    ItemService itemService = new ItemController();
+    ItemService itemService = new ItemServiceImpl();
     @FXML
     private TextArea txtDescription;
     @FXML

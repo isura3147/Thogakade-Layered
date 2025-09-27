@@ -1,41 +1,19 @@
 package repository;
 
 import db.DBConnection;
-import javafx.collections.ObservableList;
-import model.Item;
-import service.ItemService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ItemController implements ItemService {
-    @Override
-    public ObservableList<Item> loadDetails(ObservableList<Item> itemInfos) {
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "SELECT * FROM item;";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                Item itemInfo = new Item(
-                        resultSet.getString("ItemCode"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("PackSize"),
-                        resultSet.getDouble("UnitPrice"),
-                        resultSet.getInt("QtyOnHand")
-                );
-                itemInfos.add(itemInfo);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return itemInfos;
+public class ItemRepository {
+    public ResultSet loadDetails() throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String SQL = "SELECT * FROM item;";
+        return connection.prepareStatement(SQL).executeQuery();
     }
 
-    @Override
     public void addItem(String itemCode, String description, String packSize, double unitPrice, int qtyOnHand) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -52,7 +30,6 @@ public class ItemController implements ItemService {
         }
     }
 
-    @Override
     public void deleteItem(String itemCode) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -65,7 +42,6 @@ public class ItemController implements ItemService {
         }
     }
 
-    @Override
     public void updateItem(String description, String packSize, double unitPrice, int qtyOnHand, String itemCode) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -82,7 +58,6 @@ public class ItemController implements ItemService {
         }
     }
 
-    @Override
     public ResultSet viewItem(String itemCode) throws SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
         String SQL = "SELECT * FROM item WHERE ItemCode = ?;";
