@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="471.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customerController.AllCustomerTableController">
+   <children>
+      <TableView fx:id="tblCustomers" layoutX="24.0" layoutY="74.0" prefHeight="310.0" prefWidth="879.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="94.39999389648438" text="Customer ID" />
+          <TableColumn fx:id="colTitle" prefWidth="61.59998321533203" text="Title" />
+            <TableColumn fx:id="colName" prefWidth="82.39994812011719" text="Name" />
+            <TableColumn fx:id="colDOB" prefWidth="91.20001220703125" text="Date of Birth" />
+            <TableColumn fx:id="colSalary" prefWidth="104.00006103515625" text="Salary" />
+            <TableColumn fx:id="colAddress" prefWidth="133.60000610351562" text="Address" />
+            <TableColumn fx:id="colCity" prefWidth="88.79998779296875" text="City" />
+            <TableColumn fx:id="colProvince" prefWidth="110.4000244140625" text="Province" />
+            <TableColumn fx:id="colPostalCode" prefWidth="114.400146484375" text="Postal Code" />
+        </columns>
+      </TableView>
+      <Label layoutX="396.0" layoutY="22.0" text="All Customers">
+         <font>
+            <Font name="Cambria Bold" size="21.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnBack" buttonType="RAISED" layoutX="438.0" layoutY="415.0" onAction="#btnBackOnAction" text="BACK">
+         <font>
+            <Font name="Garamond" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
