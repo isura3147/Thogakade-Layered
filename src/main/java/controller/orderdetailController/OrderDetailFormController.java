@@ -14,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.OrderDetail;
+import service.OrderDetailServiceImpl;
+import service.OrderDetailService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +24,7 @@ import java.util.ResourceBundle;
 public class OrderDetailFormController implements Initializable {
 
     ObservableList<OrderDetail> orderDetailInfos = FXCollections.observableArrayList();
-    OrderDetailService orderDetailService = new OrderDetailController();
+    OrderDetailService orderDetailService = new OrderDetailServiceImpl();
     @FXML
     private TableColumn<?, ?> colDiscount;
     @FXML

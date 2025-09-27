@@ -1,16 +1,17 @@
-package controller.customerController;
+package repository;
 
 import db.DBConnection;
-import javafx.collections.ObservableList;
-import model.Customer;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class CustomerController implements CustomerService {
+public class CustomerRepositoryImpl implements CustomerRepository{
     @Override
     public void addCustomer(String id, String title, String name, String DOB, double salary, String address, String city, String province, String postalCode) {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "isura1234");
+            Connection connection = DBConnection.getInstance().getConnection();
             String SQL = "INSERT INTO customer VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1, id);
@@ -72,32 +73,9 @@ public class CustomerController implements CustomerService {
     }
 
     @Override
-    public ObservableList<Customer> loadDetails(ObservableList<Customer> customerInfos) {
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "SELECT * FROM customer;";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                Customer customerInfo = new Customer(
-                        resultSet.getString("CustID"),
-                        resultSet.getString("CustTitle"),
-                        resultSet.getString("CustName"),
-                        resultSet.getDate("DOB").toLocalDate(),
-                        resultSet.getDouble("salary"),
-                        resultSet.getString("CustAddress"),
-                        resultSet.getString("City"),
-                        resultSet.getString("Province"),
-                        resultSet.getString("PostalCode")
-                );
-                customerInfos.add(customerInfo);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return customerInfos;
+    public ResultSet loadDetails() throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String SQL = "SELECT * FROM customer;";
+        return connection.prepareStatement(SQL).executeQuery();
     }
-
-
 }

@@ -13,10 +13,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Customer;
+import service.CustomerServiceImpl;
+import service.CustomerService;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 public class AllCustomerTableController implements Initializable {
@@ -25,7 +26,7 @@ public class AllCustomerTableController implements Initializable {
     @FXML
     public TableView<Customer> tblCustomers;
     ObservableList<Customer> customerInfos = FXCollections.observableArrayList();
-    CustomerService customerService = new CustomerController();
+    CustomerService customerService = new CustomerServiceImpl();
     @FXML
     private TableColumn<?, ?> colAddress;
     @FXML

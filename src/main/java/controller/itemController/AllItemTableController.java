@@ -13,10 +13,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
+import service.ItemServiceImpl;
+import service.ItemService;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 public class AllItemTableController implements Initializable {
@@ -24,7 +25,7 @@ public class AllItemTableController implements Initializable {
     @FXML
     public TableView<Item> tblItems;
     ObservableList<Item> itemInfos = FXCollections.observableArrayList();
-    ItemService itemService = new ItemController();
+    ItemService itemService = new ItemServiceImpl();
     @FXML
     private TableColumn<?, ?> colDescription;
     @FXML

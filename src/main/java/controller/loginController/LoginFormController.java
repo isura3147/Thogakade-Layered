@@ -7,13 +7,15 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import service.LoginServiceImpl;
+import service.LoginService;
 
 import java.io.IOException;
 import java.sql.*;
 
 public class LoginFormController {
 
-    LoginService loginService = new LoginController();
+    LoginService loginService = new LoginServiceImpl();
     @FXML
     private TextField txtPassword;
     @FXML

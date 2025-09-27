@@ -1,37 +1,19 @@
-package controller.itemController;
+package repository;
 
 import db.DBConnection;
-import javafx.collections.ObservableList;
-import model.Item;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ItemController implements ItemService {
-    @Override
-    public ObservableList<Item> loadDetails(ObservableList<Item> itemInfos) {
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "SELECT * FROM item;";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            ResultSet resultSet = preparedStatement.executeQuery();
+public class ItemRepositoryImpl implements ItemRepository {
 
-            while (resultSet.next()) {
-                Item itemInfo = new Item(
-                        resultSet.getString("ItemCode"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("PackSize"),
-                        resultSet.getDouble("UnitPrice"),
-                        resultSet.getInt("QtyOnHand")
-                );
-                itemInfos.add(itemInfo);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return itemInfos;
+    @Override
+    public ResultSet loadDetails() throws SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        String SQL = "SELECT * FROM item;";
+        return connection.prepareStatement(SQL).executeQuery();
     }
 
     @Override

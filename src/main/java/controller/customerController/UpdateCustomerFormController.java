@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import service.CustomerServiceImpl;
+import service.CustomerService;
 
 import java.io.IOException;
 import java.sql.*;
@@ -19,7 +21,7 @@ public class UpdateCustomerFormController {
     public JFXButton btnViewAllCustomers;
     @FXML
     public TextField txtPostalCode;
-    CustomerService customerService = new CustomerController();
+    CustomerService customerService = new CustomerServiceImpl();
     @FXML
     private TextField txtAddress;
     @FXML

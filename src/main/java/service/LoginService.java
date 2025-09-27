@@ -1,4 +1,4 @@
-package controller.loginController;
+package service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
