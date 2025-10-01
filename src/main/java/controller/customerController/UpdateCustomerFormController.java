@@ -1,6 +1,5 @@
 package controller.customerController;
 
-import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -74,11 +73,14 @@ public class UpdateCustomerFormController implements Initializable {
         customerService.addCustomer(txtId.getText(), txtTitle.getText(), txtName.getText(), String.valueOf(txtDOB.getValue()),
                 Double.parseDouble(txtSalary.getText()), txtAddress.getText(), txtCity.getText(),
                 txtProvince.getText(), txtPostalCode.getText());
+
+        loadCustomerInfo();
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
         customerService.deleteCustomer(txtId.getText());
+        loadCustomerInfo();
     }
 
     @FXML
@@ -86,6 +88,8 @@ public class UpdateCustomerFormController implements Initializable {
         customerService.updateCustomer(txtId.getText(), txtTitle.getText(), txtName.getText(), String.valueOf(txtDOB.getValue()),
                 Double.parseDouble(txtSalary.getText()), txtAddress.getText(), txtCity.getText(),
                 txtProvince.getText(), txtPostalCode.getText());
+
+        loadCustomerInfo();
     }
 
     @FXML
@@ -135,6 +139,20 @@ public class UpdateCustomerFormController implements Initializable {
         colPostalCode.setCellValueFactory(new PropertyValueFactory<>("postalCode"));
 
         loadCustomerInfo();
+
+        tblCustomers.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
+            if (newValue != null) {
+                txtId.setText(newValue.getId());
+                txtTitle.setText(newValue.getTitle());
+                txtName.setText(newValue.getName());
+                txtDOB.setValue(newValue.getDob());
+                txtSalary.setText(String.valueOf(newValue.getSalary()));
+                txtAddress.setText(newValue.getAddress());
+                txtCity.setText(newValue.getCity());
+                txtProvince.setText(newValue.getProvince());
+                txtPostalCode.setText(newValue.getPostalCode());
+            }
+        }));
     }
 
     private void loadCustomerInfo() {
