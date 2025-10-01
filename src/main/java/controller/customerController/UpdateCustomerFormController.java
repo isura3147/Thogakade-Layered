@@ -71,16 +71,7 @@ public class UpdateCustomerFormController implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        customerService.addCustomer(
-                txtId.getText(),
-                txtTitle.getText(),
-                txtName.getText(),
-                String.valueOf(txtDOB.getValue()),
-                Double.parseDouble(txtSalary.getText()),
-                txtAddress.getText(),
-                txtCity.getText(),
-                txtProvince.getText(),
-                txtPostalCode.getText());
+        customerService.addCustomer(txtId.getText(), txtTitle.getText(), txtName.getText(), String.valueOf(txtDOB.getValue()), Double.parseDouble(txtSalary.getText()), txtAddress.getText(), txtCity.getText(), txtProvince.getText(), txtPostalCode.getText());
 
         loadCustomerInfo();
     }
@@ -93,16 +84,7 @@ public class UpdateCustomerFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        customerService.updateCustomer(
-                txtId.getText(),
-                txtTitle.getText(),
-                txtName.getText(),
-                String.valueOf(txtDOB.getValue()),
-                Double.parseDouble(txtSalary.getText()),
-                txtAddress.getText(),
-                txtCity.getText(),
-                txtProvince.getText(),
-                txtPostalCode.getText());
+        customerService.updateCustomer(txtId.getText(), txtTitle.getText(), txtName.getText(), String.valueOf(txtDOB.getValue()), Double.parseDouble(txtSalary.getText()), txtAddress.getText(), txtCity.getText(), txtProvince.getText(), txtPostalCode.getText());
 
         loadCustomerInfo();
     }
@@ -154,23 +136,19 @@ public class UpdateCustomerFormController implements Initializable {
 
         loadCustomerInfo();
 
-        tblCustomers
-                .getSelectionModel()
-                .selectedItemProperty()
-                .addListener(
-                        ((observableValue, oldValue, newValue) -> {
-                            if (newValue != null) {
-                                txtId.setText(newValue.getId());
-                                txtTitle.setText(newValue.getTitle());
-                                txtName.setText(newValue.getName());
-                                txtDOB.setValue(newValue.getDob());
-                                txtSalary.setText(String.valueOf(newValue.getSalary()));
-                                txtAddress.setText(newValue.getAddress());
-                                txtCity.setText(newValue.getCity());
-                                txtProvince.setText(newValue.getProvince());
-                                txtPostalCode.setText(newValue.getPostalCode());
-                            }
-                        }));
+        tblCustomers.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
+            if (newValue != null) {
+                txtId.setText(newValue.getId());
+                txtTitle.setText(newValue.getTitle());
+                txtName.setText(newValue.getName());
+                txtDOB.setValue(newValue.getDob());
+                txtSalary.setText(String.valueOf(newValue.getSalary()));
+                txtAddress.setText(newValue.getAddress());
+                txtCity.setText(newValue.getCity());
+                txtProvince.setText(newValue.getProvince());
+                txtPostalCode.setText(newValue.getPostalCode());
+            }
+        }));
     }
 
     private void loadCustomerInfo() {
