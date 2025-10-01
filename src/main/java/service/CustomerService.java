@@ -1,37 +1,38 @@
 package service;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import model.Customer;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public interface CustomerService {
 
-  void addCustomer(
-      String id,
-      String title,
-      String name,
-      String DOB,
-      double salary,
-      String address,
-      String city,
-      String province,
-      String postalCode);
+    void addCustomer(
+            String id,
+            String title,
+            String name,
+            String DOB,
+            double salary,
+            String address,
+            String city,
+            String province,
+            String postalCode);
 
-  void deleteCustomer(String id);
+    void deleteCustomer(String id);
 
-  void updateCustomer(
-      String id,
-      String title,
-      String name,
-      String DOB,
-      double salary,
-      String address,
-      String city,
-      String province,
-      String postalCode);
+    void updateCustomer(
+            String id,
+            String title,
+            String name,
+            String DOB,
+            double salary,
+            String address,
+            String city,
+            String province,
+            String postalCode);
 
-  ResultSet viewCustomer(String id) throws SQLException;
+    ResultSet viewCustomer(String id) throws SQLException;
 
-  ObservableList<Customer> loadDetails(ObservableList<Customer> customerDetails);
+    ObservableList<Customer> loadDetails(ObservableList<Customer> customerDetails);
 }

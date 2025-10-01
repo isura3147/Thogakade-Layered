@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 
 public class NotificationUIController {
 
-  @FXML
-  void btnOkOnAction(ActionEvent event) {
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    stage.close();
-  }
+    @FXML
+    void btnOkOnAction(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
 }

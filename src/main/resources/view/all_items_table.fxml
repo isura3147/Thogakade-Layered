@@ -5,8 +5,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemController.AllItemTableController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="422.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.itemController.AllItemTableController">
     <children>
         <TableView fx:id="tblItems" layoutX="13.0" layoutY="72.0" prefHeight="283.0" prefWidth="573.0">
             <columns>

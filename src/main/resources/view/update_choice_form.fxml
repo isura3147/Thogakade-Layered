@@ -8,8 +8,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="336.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateChoiceFormController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="336.0" prefWidth="679.0"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.UpdateChoiceFormController">
     <children>
         <JFXButton fx:id="btnUpdateItem" alignment="CENTER" buttonType="RAISED" layoutX="110.0" layoutY="92.0"
                    onAction="#btnUpdateItemOnAction" prefHeight="44.0" prefWidth="110.0" text="UPDATE ITEM">

@@ -5,5 +5,5 @@ import java.sql.SQLException;
 
 public interface LoginRepository {
 
-  ResultSet getUsers() throws SQLException;
+    ResultSet getUsers() throws SQLException;
 }

@@ -7,55 +7,58 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import service.LoginServiceImpl;
 import service.LoginService;
+import service.LoginServiceImpl;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class LoginFormController {
 
-  LoginService loginService = new LoginServiceImpl();
-  @FXML private TextField txtPassword;
-  @FXML private TextField txtUsername;
-  private Stage stage = new Stage();
+    LoginService loginService = new LoginServiceImpl();
+    @FXML
+    private TextField txtPassword;
+    @FXML
+    private TextField txtUsername;
+    private Stage stage = new Stage();
 
-  @FXML
-  void btnLoginOnAction(ActionEvent event) {
-    boolean loginSuccess = false;
+    @FXML
+    void btnLoginOnAction(ActionEvent event) {
+        boolean loginSuccess = false;
 
-    try {
-      ResultSet resultSet = loginService.getUsers();
-
-      while (resultSet.next()) {
-        if (txtUsername.getText().equals(resultSet.getString("name"))
-            && txtPassword.getText().equals(resultSet.getString("password"))) {
-          try {
-            stage.setScene(
-                new Scene(
-                    FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-          stage.show();
-          stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-          stage.close();
-          loginSuccess = true;
-          break;
-        }
-      }
-      if (!loginSuccess) {
         try {
-          stage.setScene(
-              new Scene(FXMLLoader.load(getClass().getResource("/view/notification_ui.fxml"))));
-        } catch (IOException e) {
-          throw new RuntimeException(e);
-        }
-        stage.show();
-      }
+            ResultSet resultSet = loginService.getUsers();
 
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
+            while (resultSet.next()) {
+                if (txtUsername.getText().equals(resultSet.getString("name"))
+                        && txtPassword.getText().equals(resultSet.getString("password"))) {
+                    try {
+                        stage.setScene(
+                                new Scene(
+                                        FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    stage.show();
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.close();
+                    loginSuccess = true;
+                    break;
+                }
+            }
+            if (!loginSuccess) {
+                try {
+                    stage.setScene(
+                            new Scene(FXMLLoader.load(getClass().getResource("/view/notification_ui.fxml"))));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                stage.show();
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
-  }
 }

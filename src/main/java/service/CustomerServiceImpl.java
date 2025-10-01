@@ -1,10 +1,12 @@
 package service;
 
-import java.sql.*;
 import javafx.collections.ObservableList;
 import model.Customer;
 import repository.CustomerRepository;
 import repository.CustomerRepositoryImpl;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CustomerServiceImpl implements CustomerService {
 

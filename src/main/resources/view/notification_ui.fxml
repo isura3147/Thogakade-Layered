@@ -7,8 +7,8 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="238.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NotificationUIController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="238.0" prefWidth="403.0"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.NotificationUIController">
     <children>
         <Circle layoutX="202.0" layoutY="44.0" radius="19.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE">
             <fill>

@@ -1,8 +1,5 @@
 package controller.itemController;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,8 +16,13 @@ import model.Item;
 import service.ItemService;
 import service.ItemServiceImpl;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class AllItemTableController implements Initializable {
 
+    private final Stage stage = new Stage();
     @FXML
     public TableView<Item> tblItems;
     ObservableList<Item> itemInfos = FXCollections.observableArrayList();
@@ -35,7 +37,6 @@ public class AllItemTableController implements Initializable {
     private TableColumn<?, ?> colUnitPrice;
     @FXML
     private TableColumn<?, ?> colQtyOnHand;
-    private final Stage stage = new Stage();
     private Stage currentStage;
 
     @FXML
