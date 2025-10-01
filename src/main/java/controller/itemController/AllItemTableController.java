@@ -1,5 +1,8 @@
 package controller.itemController;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,12 +16,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Item;
-import service.ItemServiceImpl;
 import service.ItemService;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import service.ItemServiceImpl;
 
 public class AllItemTableController implements Initializable {
 
@@ -36,7 +35,7 @@ public class AllItemTableController implements Initializable {
     private TableColumn<?, ?> colUnitPrice;
     @FXML
     private TableColumn<?, ?> colQtyOnHand;
-    private Stage stage = new Stage();
+    private final Stage stage = new Stage();
     private Stage currentStage;
 
     @FXML

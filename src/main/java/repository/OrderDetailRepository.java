@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public interface OrderDetailRepository {
 
-    ResultSet loadDetails() throws SQLException;
+  ResultSet loadDetails() throws SQLException;
 
-    ResultSet getDescription(String itemCode) throws SQLException;
+  ResultSet getDescription(String itemCode) throws SQLException;
 
-    void updateOrderDetails(String orderQty, String discount, String orderId, String itemCode);
+  void updateOrderDetails(String orderQty, String discount, String orderId, String itemCode);
 }

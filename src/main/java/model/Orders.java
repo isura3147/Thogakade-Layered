@@ -2,9 +2,8 @@ package model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.*;
-
 import java.time.LocalDate;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,8 +12,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class Orders {
-    @Id
-    private String orderId;
-    private LocalDate dob;
-    private String customerId;
+  @Id private String orderId;
+  private LocalDate dob;
+  private String customerId;
 }

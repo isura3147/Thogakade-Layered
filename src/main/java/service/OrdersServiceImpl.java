@@ -1,12 +1,11 @@
 package service;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import model.Orders;
 import repository.OrdersRepository;
 import repository.OrdersRepositoryImpl;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class OrdersServiceImpl implements OrdersService {
 

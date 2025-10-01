@@ -1,81 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="452.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemController.UpdateItemFormController">
-   <children>
-      <TextField fx:id="txtItemCode" layoutX="169.0" layoutY="105.0" prefHeight="26.0" prefWidth="300.0" />
-      <TextField fx:id="txtPackSize" layoutX="168.0" layoutY="237.0" prefHeight="26.0" prefWidth="300.0" />
-      <TextField fx:id="txtUnitPrice" layoutX="169.0" layoutY="284.0" prefHeight="26.0" prefWidth="300.0" />
-      <TextField fx:id="txtQtyOnHand" layoutX="168.0" layoutY="330.0" prefHeight="26.0" prefWidth="300.0" />
-      <Label layoutX="292.0" layoutY="24.0" text="UPDATE ITEM">
-         <font>
-            <Font name="Symbol" size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="108.0" prefHeight="18.0" prefWidth="82.0" text="Item Code">
-         <font>
-            <Font name="Sitka Text" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="149.0" prefHeight="18.0" prefWidth="82.0" text="Description">
-         <font>
-            <Font name="Sitka Text" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="241.0" prefHeight="18.0" prefWidth="82.0" text="Pack Size">
-         <font>
-            <Font name="Sitka Text" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="288.0" prefHeight="18.0" prefWidth="82.0" text="Unit Price">
-         <font>
-            <Font name="Sitka Text" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="27.0" layoutY="335.0" prefHeight="18.0" prefWidth="126.0" text="Quantity on Hand">
-         <font>
-            <Font name="Sitka Text" size="14.0" />
-         </font>
-      </Label>
-      <Line endX="-100.00003051757812" endY="378.8000183105469" layoutX="612.0" layoutY="64.0" startX="-100.00003051757812" startY="13.200004577636719" />
-      <Line endX="602.2000732421875" endY="-7.62939453125E-6" layoutX="109.0" layoutY="75.0" startX="-100.0" />
-      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="570.0" layoutY="100.0" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="82.0" text="ADD">
-         <font>
-            <Font name="XOUMEG S57 Condensed Regular" size="18.0" />
-         </font>
-      </JFXButton>
-      <TextArea fx:id="txtDescription" layoutX="168.0" layoutY="149.0" prefHeight="77.0" prefWidth="300.0" />
-      <JFXButton fx:id="btnView" buttonType="RAISED" layoutX="570.0" layoutY="149.0" onAction="#btnViewOnAction" prefHeight="26.0" prefWidth="82.0" text="VIEW">
-         <font>
-            <Font name="XOUMEG S57 Condensed Regular" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="570.0" layoutY="201.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="82.0" text="UPDATE">
-         <font>
-            <Font name="XOUMEG S57 Condensed Regular" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="570.0" layoutY="250.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="82.0" text="DELETE">
-         <font>
-            <Font name="XOUMEG S57 Condensed Regular" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnBack" layoutX="591.0" layoutY="371.0" onAction="#btnBackOnAction" text="BACK">
-         <font>
-            <Font name="Yu Gothic UI Semibold" size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnViewAllItems" buttonType="RAISED" layoutX="538.0" layoutY="297.0" onAction="#btnViewAllItemsOnAction" prefHeight="36.0" prefWidth="146.0" text="VIEW ALL ITEMS">
-         <font>
-            <Font name="XOUMEG S57 Condensed Regular" size="18.0" />
-         </font>
-      </JFXButton>
-   </children>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="452.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.itemController.UpdateItemFormController">
+    <children>
+        <TextField fx:id="txtItemCode" layoutX="169.0" layoutY="105.0" prefHeight="26.0" prefWidth="300.0"/>
+        <TextField fx:id="txtPackSize" layoutX="168.0" layoutY="237.0" prefHeight="26.0" prefWidth="300.0"/>
+        <TextField fx:id="txtUnitPrice" layoutX="169.0" layoutY="284.0" prefHeight="26.0" prefWidth="300.0"/>
+        <TextField fx:id="txtQtyOnHand" layoutX="168.0" layoutY="330.0" prefHeight="26.0" prefWidth="300.0"/>
+        <Label layoutX="292.0" layoutY="24.0" text="UPDATE ITEM">
+            <font>
+                <Font name="Symbol" size="22.0"/>
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="108.0" prefHeight="18.0" prefWidth="82.0" text="Item Code">
+            <font>
+                <Font name="Sitka Text" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="149.0" prefHeight="18.0" prefWidth="82.0" text="Description">
+            <font>
+                <Font name="Sitka Text" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="241.0" prefHeight="18.0" prefWidth="82.0" text="Pack Size">
+            <font>
+                <Font name="Sitka Text" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="288.0" prefHeight="18.0" prefWidth="82.0" text="Unit Price">
+            <font>
+                <Font name="Sitka Text" size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="27.0" layoutY="335.0" prefHeight="18.0" prefWidth="126.0" text="Quantity on Hand">
+            <font>
+                <Font name="Sitka Text" size="14.0"/>
+            </font>
+        </Label>
+        <Line endX="-100.00003051757812" endY="378.8000183105469" layoutX="612.0" layoutY="64.0"
+              startX="-100.00003051757812" startY="13.200004577636719"/>
+        <Line endX="602.2000732421875" endY="-7.62939453125E-6" layoutX="109.0" layoutY="75.0" startX="-100.0"/>
+        <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="570.0" layoutY="100.0" onAction="#btnAddOnAction"
+                   prefHeight="26.0" prefWidth="82.0" text="ADD">
+            <font>
+                <Font name="XOUMEG S57 Condensed Regular" size="18.0"/>
+            </font>
+        </JFXButton>
+        <TextArea fx:id="txtDescription" layoutX="168.0" layoutY="149.0" prefHeight="77.0" prefWidth="300.0"/>
+        <JFXButton fx:id="btnView" buttonType="RAISED" layoutX="570.0" layoutY="149.0" onAction="#btnViewOnAction"
+                   prefHeight="26.0" prefWidth="82.0" text="VIEW">
+            <font>
+                <Font name="XOUMEG S57 Condensed Regular" size="18.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="570.0" layoutY="201.0" onAction="#btnUpdateOnAction"
+                   prefHeight="26.0" prefWidth="82.0" text="UPDATE">
+            <font>
+                <Font name="XOUMEG S57 Condensed Regular" size="18.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="570.0" layoutY="250.0" onAction="#btnDeleteOnAction"
+                   prefHeight="26.0" prefWidth="82.0" text="DELETE">
+            <font>
+                <Font name="XOUMEG S57 Condensed Regular" size="18.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnBack" layoutX="591.0" layoutY="371.0" onAction="#btnBackOnAction" text="BACK">
+            <font>
+                <Font name="Yu Gothic UI Semibold" size="14.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnViewAllItems" buttonType="RAISED" layoutX="538.0" layoutY="297.0"
+                   onAction="#btnViewAllItemsOnAction" prefHeight="36.0" prefWidth="146.0" text="VIEW ALL ITEMS">
+            <font>
+                <Font name="XOUMEG S57 Condensed Regular" size="18.0"/>
+            </font>
+        </JFXButton>
+    </children>
 </AnchorPane>

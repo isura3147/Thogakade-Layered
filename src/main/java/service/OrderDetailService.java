@@ -4,9 +4,9 @@ import javafx.collections.ObservableList;
 import model.OrderDetail;
 
 public interface OrderDetailService {
-    ObservableList<OrderDetail> loadDetails(ObservableList<OrderDetail> orderDetailInfos);
+  ObservableList<OrderDetail> loadDetails(ObservableList<OrderDetail> orderDetailInfos);
 
-    String getDescription(String itemCode);
+  String getDescription(String itemCode);
 
-    void updateOrderDetail(String orderQty, String discount, String orderId, String itemCode);
+  void updateOrderDetail(String orderQty, String discount, String orderId, String itemCode);
 }

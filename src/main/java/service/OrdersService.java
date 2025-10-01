@@ -4,11 +4,11 @@ import javafx.collections.ObservableList;
 import model.Orders;
 
 public interface OrdersService {
-    ObservableList<Orders> loadDetails(ObservableList<Orders> ordersInfos);
+  ObservableList<Orders> loadDetails(ObservableList<Orders> ordersInfos);
 
-    void updateOrder(String DOB, String orderId, String customerId);
+  void updateOrder(String DOB, String orderId, String customerId);
 
-    String getCustomerName(String customerId);
+  String getCustomerName(String customerId);
 
-    void deleteOrder(String orderId);
+  void deleteOrder(String orderId);
 }
