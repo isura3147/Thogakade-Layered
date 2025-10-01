@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import model.Item;
 import repository.ItemRepository;
 import repository.ItemRepositoryImpl;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -17,13 +18,13 @@ public class ItemServiceImpl implements ItemService {
             ResultSet resultSet = itemRepository.loadDetails();
 
             while (resultSet.next()) {
-                Item itemInfo = new Item(
-                        resultSet.getString("ItemCode"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("PackSize"),
-                        resultSet.getDouble("UnitPrice"),
-                        resultSet.getInt("QtyOnHand")
-                );
+                Item itemInfo =
+                        new Item(
+                                resultSet.getString("ItemCode"),
+                                resultSet.getString("Description"),
+                                resultSet.getString("PackSize"),
+                                resultSet.getDouble("UnitPrice"),
+                                resultSet.getInt("QtyOnHand"));
                 itemInfos.add(itemInfo);
             }
         } catch (SQLException e) {
@@ -33,7 +34,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void addItem(String itemCode, String description, String packSize, double unitPrice, int qtyOnHand) {
+    public void addItem(
+            String itemCode, String description, String packSize, double unitPrice, int qtyOnHand) {
         itemRepository.addItem(itemCode, description, packSize, unitPrice, qtyOnHand);
     }
 
@@ -43,7 +45,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void updateItem(String description, String packSize, double unitPrice, int qtyOnHand, String itemCode) {
+    public void updateItem(
+            String description, String packSize, double unitPrice, int qtyOnHand, String itemCode) {
         itemRepository.updateItem(description, packSize, unitPrice, qtyOnHand, itemCode);
     }
 

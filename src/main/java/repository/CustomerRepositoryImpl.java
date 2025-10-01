@@ -7,9 +7,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerRepositoryImpl implements CustomerRepository{
+public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
-    public void addCustomer(String id, String title, String name, String DOB, double salary, String address, String city, String province, String postalCode) {
+    public void addCustomer(
+            String id,
+            String title,
+            String name,
+            String DOB,
+            double salary,
+            String address,
+            String city,
+            String province,
+            String postalCode) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             String SQL = "INSERT INTO customer VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -43,10 +52,20 @@ public class CustomerRepositoryImpl implements CustomerRepository{
     }
 
     @Override
-    public void updateCustomer(String id, String title, String name, String DOB, double salary, String address, String city, String province, String postalCode) {
+    public void updateCustomer(
+            String id,
+            String title,
+            String name,
+            String DOB,
+            double salary,
+            String address,
+            String city,
+            String province,
+            String postalCode) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "UPDATE customer SET CustTitle = ?, CustName = ?, DOB = ?, salary = ?, CustAddress = ?, City = ?, Province = ?, PostalCode = ? WHERE CustID = ?;";
+            String SQL =
+                    "UPDATE customer SET CustTitle = ?, CustName = ?, DOB = ?, salary = ?, CustAddress = ?, City = ?, Province = ?, PostalCode = ? WHERE CustID = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1, title);
             preparedStatement.setObject(2, name);

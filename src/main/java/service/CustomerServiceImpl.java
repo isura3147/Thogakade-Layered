@@ -5,7 +5,8 @@ import model.Customer;
 import repository.CustomerRepository;
 import repository.CustomerRepositoryImpl;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CustomerServiceImpl implements CustomerService {
 

@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrdersRepositoryImpl implements OrdersRepository{
+public class OrdersRepositoryImpl implements OrdersRepository {
 
     @Override
     public ResultSet loadDetails() throws SQLException {
@@ -48,7 +48,6 @@ public class OrdersRepositoryImpl implements OrdersRepository{
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public void deleteOrder(String orderId) {

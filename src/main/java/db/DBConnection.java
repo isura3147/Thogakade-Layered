@@ -7,10 +7,11 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static DBConnection instance;
-    private Connection connection;
+    private final Connection connection;
 
     private DBConnection() throws SQLException {
-        this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "isura1234");
+        this.connection =
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "isura1234");
     }
 
     public static DBConnection getInstance() throws SQLException {

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class UpdateChoiceFormController {
 
-    private Stage stage = new Stage();
+    private final Stage stage = new Stage();
     private Stage currentStage;
 
     @FXML

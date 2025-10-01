@@ -7,11 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import service.LoginServiceImpl;
 import service.LoginService;
+import service.LoginServiceImpl;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class LoginFormController {
 
@@ -30,9 +31,12 @@ public class LoginFormController {
             ResultSet resultSet = loginService.getUsers();
 
             while (resultSet.next()) {
-                if (txtUsername.getText().equals(resultSet.getString("name")) && txtPassword.getText().equals(resultSet.getString("password"))) {
+                if (txtUsername.getText().equals(resultSet.getString("name"))
+                        && txtPassword.getText().equals(resultSet.getString("password"))) {
                     try {
-                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
+                        stage.setScene(
+                                new Scene(
+                                        FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -45,7 +49,8 @@ public class LoginFormController {
             }
             if (!loginSuccess) {
                 try {
-                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/notification_ui.fxml"))));
+                    stage.setScene(
+                            new Scene(FXMLLoader.load(getClass().getResource("/view/notification_ui.fxml"))));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -56,5 +61,4 @@ public class LoginFormController {
             throw new RuntimeException(e);
         }
     }
-
 }

@@ -15,8 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Orders;
-import service.OrdersServiceImpl;
 import service.OrdersService;
+import service.OrdersServiceImpl;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class OrdersFormController implements Initializable {
 
+    private final Stage stage = new Stage();
     ObservableList<Orders> ordersInfos = FXCollections.observableArrayList();
     OrdersService ordersService = new OrdersServiceImpl();
     @FXML
@@ -42,15 +43,14 @@ public class OrdersFormController implements Initializable {
     private TextField txtOrderId;
     @FXML
     private TextField txtCustomerName;
-    private Stage stage = new Stage();
     private Stage currentStage;
-
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
         currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
+            stage.setScene(
+                    new Scene(FXMLLoader.load(getClass().getResource("/view/update_choice_form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -68,7 +68,8 @@ public class OrdersFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        ordersService.updateOrder(String.valueOf(txtDOB.getValue()), txtOrderId.getText(), txtCustomerId.getText());
+        ordersService.updateOrder(
+                String.valueOf(txtDOB.getValue()), txtOrderId.getText(), txtCustomerId.getText());
         loadOrdersInfo();
     }
 
@@ -86,14 +87,18 @@ public class OrdersFormController implements Initializable {
 
         loadOrdersInfo();
 
-        tblOrders.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
-            if (newValue != null) {
-                txtOrderId.setText(newValue.getOrderId());
-                txtDOB.setValue(newValue.getDob());
-                txtCustomerId.setText(newValue.getCustomerId());
-                txtCustomerName.setText(getCustomerName(txtCustomerId.getText()));
-            }
-        }));
+        tblOrders
+                .getSelectionModel()
+                .selectedItemProperty()
+                .addListener(
+                        ((observableValue, oldValue, newValue) -> {
+                            if (newValue != null) {
+                                txtOrderId.setText(newValue.getOrderId());
+                                txtDOB.setValue(newValue.getDob());
+                                txtCustomerId.setText(newValue.getCustomerId());
+                                txtCustomerName.setText(getCustomerName(txtCustomerId.getText()));
+                            }
+                        }));
     }
 
     private String getCustomerName(String customerId) {
@@ -104,5 +109,4 @@ public class OrdersFormController implements Initializable {
         ordersInfos.clear();
         tblOrders.setItems(ordersService.loadDetails(ordersInfos));
     }
-
 }

@@ -3,43 +3,44 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="238.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NotificationUIController">
-   <children>
-      <Circle layoutX="202.0" layoutY="44.0" radius="19.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" green="0.03333333507180214" blue="0.03333333507180214" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Circle>
-      <Label alignment="CENTER" layoutX="200.0" layoutY="32.0" text="i">
-         <font>
-            <Font name="Bookshelf Symbol 7" size="22.0" />
-         </font>
-      </Label>
-      <Text layoutX="72.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username or Password Incorrect. Please Try again " textAlignment="CENTER" wrappingWidth="265.458984375">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Text>
-      <JFXButton fx:id="btnOk" buttonType="RAISED" layoutX="174.0" layoutY="171.0" onAction="#btnOkOnAction" prefHeight="26.0" prefWidth="63.0" ripplerFill="BLACK" text="OK" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="238.0" prefWidth="403.0"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.NotificationUIController">
+    <children>
+        <Circle layoutX="202.0" layoutY="44.0" radius="19.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="1.0" green="0.03333333507180214" blue="0.03333333507180214"/>
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0"/>
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Circle>
+        <Label alignment="CENTER" layoutX="200.0" layoutY="32.0" text="i">
+            <font>
+                <Font name="Bookshelf Symbol 7" size="22.0"/>
+            </font>
+        </Label>
+        <Text layoutX="72.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Username or Password Incorrect. Please Try again " textAlignment="CENTER"
+              wrappingWidth="265.458984375">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Text>
+        <JFXButton fx:id="btnOk" buttonType="RAISED" layoutX="174.0" layoutY="171.0" onAction="#btnOkOnAction"
+                   prefHeight="26.0" prefWidth="63.0" ripplerFill="BLACK" text="OK"/>
+    </children>
 </AnchorPane>

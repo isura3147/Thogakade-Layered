@@ -1,55 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="396.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.loginController.LoginFormController">
-   <children>
-      <Label alignment="CENTER" layoutX="103.0" layoutY="18.0" prefHeight="86.0" prefWidth="250.0" text="THOGAKADE">
-         <font>
-            <Font name="STXihei" size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="38.0" layoutY="123.0" prefHeight="58.0" prefWidth="111.0" text="username">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="37.0" layoutY="199.0" prefHeight="58.0" prefWidth="111.0" text="password">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtUsername" layoutX="161.0" layoutY="139.0" />
-      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="196.0" layoutY="301.0" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="78.0" text="LOGIN">
-         <font>
-            <Font name="Century" size="12.0" />
-         </font>
-      </JFXButton>
-      <PasswordField fx:id="txtPassword" layoutX="161.0" layoutY="215.0" />
-      <ImageView fitHeight="396.0" fitWidth="399.0" layoutX="415.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/shop.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </ImageView>
-   </children>
-   <effect>
-      <DropShadow>
-         <color>
-            <Color red="0.426800012588501" green="0.8417826890945435" blue="0.9700000286102295" />
-         </color>
-      </DropShadow>
-   </effect>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="396.0" prefWidth="809.0"
+            xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.loginController.LoginFormController">
+    <children>
+        <Label alignment="CENTER" layoutX="103.0" layoutY="18.0" prefHeight="86.0" prefWidth="250.0" text="THOGAKADE">
+            <font>
+                <Font name="STXihei" size="30.0"/>
+            </font>
+        </Label>
+        <Label layoutX="38.0" layoutY="123.0" prefHeight="58.0" prefWidth="111.0" text="username">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="37.0" layoutY="199.0" prefHeight="58.0" prefWidth="111.0" text="password">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="txtUsername" layoutX="161.0" layoutY="139.0"/>
+        <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="196.0" layoutY="301.0" onAction="#btnLoginOnAction"
+                   prefHeight="38.0" prefWidth="78.0" text="LOGIN">
+            <font>
+                <Font name="Century" size="12.0"/>
+            </font>
+        </JFXButton>
+        <PasswordField fx:id="txtPassword" layoutX="161.0" layoutY="215.0"/>
+        <ImageView fitHeight="396.0" fitWidth="399.0" layoutX="415.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/shop.png"/>
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </ImageView>
+    </children>
+    <effect>
+        <DropShadow>
+            <color>
+                <Color red="0.426800012588501" green="0.8417826890945435" blue="0.9700000286102295"/>
+            </color>
+        </DropShadow>
+    </effect>
 </AnchorPane>
